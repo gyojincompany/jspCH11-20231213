@@ -40,6 +40,17 @@
 			
 		} catch(Exception e) {
 			e.printStackTrace();//에러발생시 에러내용 출력
+		} finally {
+			try{
+				if(stmt != null) {
+					stmt.close();
+				}
+				if(conn != null) {
+					conn.close();
+				}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		}
 	
 	%>
